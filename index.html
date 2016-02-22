@@ -54,6 +54,9 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Hello, my name is Annabelle.</h1>
+	<div id="today">
+		
+	</div>
         <p>I am a Computer Science student at Roosevelt University. This is my personal website.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
@@ -74,5 +77,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+ 
+<!-- My Custom Scripts -->
+<script type="text/javascript">
+(function ($) {
+	$(function () { //On load
+	var d = new Date();
+	console.log(d);
+	var days = [
+		'Sunday',
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday'
+		];
+	
+	$('.jumbotron .container #today').html("Today is " + days[d.getDay()] + ".");
+	});
+})(jQuery);
+</script>
+ </body>
 </html>
