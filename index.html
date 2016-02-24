@@ -93,8 +93,22 @@
 		'Friday',
 		'Saturday'
 		];
+	var month = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
+		];
 	
-	$('.jumbotron .container #today').html("Today is " + days[d.getDay()] + ".");
+	$('.jumbotron .container #today').html("Today is " + days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() + ".");
 	});
 })(jQuery);
 </script>
