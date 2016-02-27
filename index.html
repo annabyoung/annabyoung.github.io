@@ -54,8 +54,9 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Hello, my name is Annabelle.</h1>
-	<div id="today">
-		
+	<div id="today">		
+	</div>
+	<div id="time">
 	</div>
         <p>I am a Computer Science student at Roosevelt University. This is my personal website.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
@@ -109,6 +110,27 @@
 		];
 	
 	$('.jumbotron .container #today').html("Today is " + days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() + ".");
+	});
+})(jQuery);
+</script>
+<script type="text/javascript">
+(function ($) {
+	$(function () { //On load
+	var t = new Date();
+	console.log(t);
+	var hr = t.getHours();
+	var ampm = hr < 12 ? 'am' : 'pm'; 
+	if (hr > 12) {
+		hr = hr - 12;
+	}
+	var min = t.getMinutes();
+	if (min < 10) {
+		min = '0' + min;
+	}
+	
+	var x = document.getElementById("time");
+	x.innerHTML = hr + ":" + min + ampm;
+	$('.jumbotron .container #time').html("The current time is " + x.innerHTML); 
 	});
 })(jQuery);
 </script>
